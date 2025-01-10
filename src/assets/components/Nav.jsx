@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
-import { Link } from 'react-scroll';  // Import Link from react-scroll for smooth scrolling
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
 
 const Nav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);  // State to toggle the mobile menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the mobile menu
+  const [isScrolled, setIsScrolled] = useState(false); // State to track if the navbar is scrolled
+
+  // Add scroll listener to toggle glass effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // Set the threshold for scroll
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-2 bg-gray-900 text-white shadow-md z-10">
+    <nav
+      className={`sticky top-0 z-10 ${
+        isScrolled
+          ? 'bg-gray-900/70 backdrop-blur-md shadow-lg' // Glass effect when scrolled
+          : 'bg-[#051329]'
+      } text-white transition duration-300 ease-in-out`}
+    >
       <div className="max-w-screen-xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold italic">
@@ -33,10 +50,9 @@ const Nav = () => {
               </svg>
             </button>
           </div>
-          
           {/* Links for larger screens */}
           <div className="hidden md:flex space-x-6 text-xs">
-            <Link to="hero" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400 ">
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400">
               Home
             </Link>
             <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400">
@@ -56,26 +72,61 @@ const Nav = () => {
             </Link>
           </div>
         </div>
-        
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden flex flex-col items-center space-y-4 mt-4">
-            <Link to="hero" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="hero"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Home
             </Link>
-            <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               About
             </Link>
-            <Link to="skills" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="skills"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Skills
             </Link>
-            <Link to="experience" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="experience"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Experience
             </Link>
-            <Link to="projects" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Projects
             </Link>
-            <Link to="contact" smooth={true} duration={500} className="cursor-pointer hover:text-indigo-400" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer hover:text-indigo-400"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Contact
             </Link>
           </div>

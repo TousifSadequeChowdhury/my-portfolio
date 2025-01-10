@@ -2,11 +2,11 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section id="hero"  className="flex flex-col md:flex-row items-center justify-between bg-gray-100 p-8 md:px-16 md:py-24 ">
+    <section id="hero"  className="flex flex-col md:flex-row items-center justify-between glass-effect p-8 md:px-16 md:py-24 ">
       {/* Left Section - Name and About Me */}
       <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-          Hi, I'm <span className="text-indigo-600">Tousif Sadeque Chowdhury</span>
+          Hi, I'm <span className="text-[#0d3776]">Tousif Sadeque Chowdhury</span>
         </h1>
         <p className="text-base md:text-lg text-gray-600 mb-6">
           I am a passionate software developer with expertise in full-stack web development. I specialize in building
@@ -15,9 +15,9 @@ const Hero = () => {
         </p>
         <a
           href="#about"
-          className="inline-block bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
+          className="inline-block bg-[#0d3776] text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
         >
-          Learn More
+          Resume
         </a>
       </div>
 

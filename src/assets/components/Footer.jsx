@@ -13,7 +13,7 @@ const Footer = () => {
             href="https://linkedin.com/in/yourprofile"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-indigo-600 mx-2"
+            className="text-indigo-400 hover:text-[#0d3776] mx-2"
           >
             LinkedIn
           </a>
@@ -21,7 +21,7 @@ const Footer = () => {
             href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-indigo-600 mx-2"
+            className="text-indigo-400 hover:text-[#0d3776] mx-2"
           >
             GitHub
           </a>
@@ -29,7 +29,7 @@ const Footer = () => {
             href="https://twitter.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-indigo-600 mx-2"
+            className="text-indigo-400 hover:text-[#0d3776] mx-2"
           >
             Twitter
           </a>
