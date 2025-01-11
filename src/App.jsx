@@ -45,8 +45,8 @@ function App() {
           <div className="flex flex-col  overflow-y-auto">
             {/* Main Content */}
             <Hero />
-            <Experience />
             <Skills />
+            <Experience />
             <Projects />
             <Education />
             <Contact />
