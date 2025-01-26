@@ -3,7 +3,7 @@ import {
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaGithub, FaMicrosoft, FaRocket, FaRegClipboard, FaJava, FaCode 
 } from "react-icons/fa";
 import { 
-  SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiNpm, SiWebpack, SiTensorflow, SiPytorch, SiPython, SiJupyter 
+  SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiNpm, SiWebpack, SiTensorflow, SiPytorch, SiPython, SiJupyter, SiDocker 
 } from "react-icons/si";
 
 const Skills = () => {
@@ -53,6 +53,7 @@ const Skills = () => {
         { name: "Webpack", icon: <SiWebpack /> },
         { name: "Postman", icon: <FaRocket /> },
         { name: "Jira", icon: <FaRegClipboard /> },
+        { name: "Docker", icon: <SiDocker /> }, 
       ],
     },
   ];

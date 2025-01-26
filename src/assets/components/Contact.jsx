@@ -1,80 +1,83 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Implement form submission logic (e.g., send data to an email service)
+
+    emailjs
+      .sendForm('service_slc5cbu', 'template_h13m55n', form.current, {
+        publicKey: 'UyA-_pl1225WMBH6j',
+      })
+      .then(
+        () => {
+          toast.success('Message sent successfully!', {
+            position: 'top-right',
+            autoClose: 3000,
+          });
+        },
+        (error) => {
+          toast.error(`Failed to send message: ${error.text}`, {
+            position: 'top-right',
+            autoClose: 3000,
+          });
+        }
+      );
   };
 
   return (
-    <section id="contact" className="w-full py-16 bg-gray-100">
-      <div className="max-w-screen-md mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">Contact</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <div id='contact' className="min-h-screen flex items-center justify-center bg-gray-900 px-4 py-4">
+      <div className="backdrop-blur-md bg-white/30 border border-white/20 shadow-lg rounded-xl p-8 max-w-lg w-full">
+        <h2 className="text-3xl font-bold text-white mb-6 text-center">
+          Get In Touch
+        </h2>
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">Name</label>
+            <label className="block text-white font-medium mb-2">Name</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              name="sender_name"
+              className="w-full px-4 py-2 bg-white/20 text-white border border-white/10 rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              placeholder="Your Name"
               required
-              className="w-full p-3 border border-gray-300 rounded-md"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">Email</label>
+            <label className="block text-white font-medium mb-2">Email</label>
             <input
               type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
+              name="sender_email"
+              className="w-full px-4 py-2 bg-white/20 text-white border border-white/10 rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              placeholder="Your Email"
               required
-              className="w-full p-3 border border-gray-300 rounded-md"
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-gray-700 font-semibold mb-2">Message</label>
+            <label className="block text-white font-medium mb-2">Message</label>
             <textarea
-              id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
+              className="w-full px-4 py-2 bg-white/20 text-white border border-white/10 rounded-lg placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              placeholder="Your Message"
+              rows="5"
               required
-              rows="4"
-              className="w-full p-3 border border-gray-300 rounded-md"
-            />
+            ></textarea>
           </div>
-          <button
-            type="submit"
-            className="w-full bg-[#0d3776] text-white py-3 rounded-md hover:bg-indigo-800 transition-all duration-300"
-          >
-            Send Message
-          </button>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-bg-gray-900 to-purple-600 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-gray-900 transition duration-200"
+            >
+              Send Message
+            </button>
+          </div>
         </form>
-        {isSubmitted && (
-          <p className="text-green-600 text-center mt-4">Your message has been sent!</p>
-        )}
       </div>
-    </section>
+      <ToastContainer />
+    </div>
   );
 };
 

@@ -1,37 +1,38 @@
 import React from 'react';
+import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6">
       <div className="max-w-screen-xl mx-auto px-4 text-center">
         <p className="text-sm">
-          &copy; {new Date().getFullYear()} Your Name. All rights reserved.
+        &copy; {new Date().getFullYear()} Tousif Chowdhury. All rights reserved.
         </p>
-        <div className="mt-4">
-          {/* Optional Social Links */}
+        <div className="mt-4 flex justify-center space-x-4">
+          {/* Social Icons */}
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/tousif-chowdhury-b6ab471b0/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-[#0d3776] mx-2"
+            className="text-white hover:text-[#1e22ff] text-xl"
           >
-            LinkedIn
+            <FaLinkedin />
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/TousifSadequeChowdhury"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-[#0d3776] mx-2"
+            className="text-white hover:text-[#1e22ff] text-xl"
           >
-            GitHub
+            <FaGithub />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/tousifchy136"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-indigo-400 hover:text-[#0d3776] mx-2"
+            className="text-white hover:text-[#1e22ff] text-xl"
           >
-            Twitter
+            <FaTwitter />
           </a>
         </div>
       </div>

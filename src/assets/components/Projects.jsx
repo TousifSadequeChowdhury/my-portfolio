@@ -37,19 +37,24 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="w-full py-16 bg-gradient-to-r">
+    <section id="projects" className="w-full py-16 bg-gray-100">
       <div className="max-w-screen-xl mx-auto px-6">
         <h2 className="text-5xl font-extrabold text-gray-800 text-center mb-16 tracking-wide text-shadow-md">
-          Our Stunning Projects
+          Projects
         </h2>
         <div className="flex flex-wrap gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:bg-indigo-50 w-full flex flex-col lg:flex-row"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
+              initial={{ opacity: 0, scale: 0.95 }} // Start slightly scaled down
+              whileInView={{ opacity: 1, scale: 1, x: 0 }} // Animate in with full opacity and scale
+              viewport={{ once: true, amount: 0.3 }} // Trigger animation when 30% of the element is visible
+              transition={{
+                delay: index * 0.3, // Stagger delay
+                duration: 0.7, // Change duration to make the transition slower
+                ease: "easeOut", // Smoother easing function
+              }}
             >
               {/* Image Section */}
               <div className="lg:w-1/3 mb-6 lg:mb-0">

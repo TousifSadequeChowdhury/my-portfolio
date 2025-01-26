@@ -33,10 +33,11 @@ const About = () => {
 
           {/* Right Section: Image */}
       
-        </div>
+        </div>  
       </div>
     </section>
   );
 };
 
 export default About;
+    

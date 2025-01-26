@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 
 const Nav = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the mobile menu
-  const [isScrolled, setIsScrolled] = useState(false); // State to track if the navbar is scrolled
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isScrolled, setIsScrolled] = useState(false); 
 
-  // Add scroll listener to toggle glass effect
+ 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10); // Set the threshold for scroll
@@ -52,24 +52,51 @@ const Nav = () => {
           </div>
           {/* Links for larger screens */}
           <div className="hidden md:flex space-x-6 text-xs">
-            <Link to="hero" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              Home
-            </Link>
-            <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              About
-            </Link>
-            <Link to="skills" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              Skills
-            </Link>
-            <Link to="experience" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              Experience
-            </Link>
-            <Link to="projects" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              Projects
-            </Link>
-            <Link to="contact" smooth={true} duration={500} className="cursor-pointer hover:text-[#0d3776ce]">
-              Contact
-            </Link>
+
+          <Link 
+  to="hero" 
+  smooth={true} 
+  duration={500} 
+  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+>
+  About
+</Link>
+<Link 
+  to="skills" 
+  smooth={true} 
+  duration={500} 
+  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+>
+  Skills
+</Link>
+<Link 
+  to="experience" 
+  smooth={true} 
+  duration={500} 
+  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+>
+  Experience
+</Link>
+<Link 
+  to="projects" 
+  smooth={true} 
+  duration={500} 
+  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+>
+  Projects
+</Link>
+<Link 
+  to="contact" 
+  smooth={true} 
+  duration={500} 
+  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+>
+  Contact
+</Link>
+
+
+
+
           </div>
         </div>
         {/* Mobile Menu */}
@@ -79,25 +106,17 @@ const Nav = () => {
               to="hero"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
+              className="cursor-pointer hover:text-[#1e22ff]"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
+           
             <Link
               to="skills"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
+              className="cursor-pointer hover:text-[#1e22ff]"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
@@ -106,7 +125,7 @@ const Nav = () => {
               to="experience"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
+              className="cursor-pointer hover:text-[#1e22ff]"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
@@ -115,7 +134,7 @@ const Nav = () => {
               to="projects"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
+              className="cursor-pointer hover:text-[#1e22ff]"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
@@ -124,7 +143,7 @@ const Nav = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#0d3776ce]"
+              className="cursor-pointer hover:text-[#1e22ff]"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
