@@ -17,24 +17,25 @@ const Landing = ({ onComplete }) => {
         setShowWebsite(true); // Show website content immediately after typing finishes
         onComplete(); // Notify parent component
       }
-    }, 100); // Adjust typing speed (milliseconds per character)
+    }, 100); 
 
     return () => clearInterval(typeTimer);
   }, []);
 
   return (
-    <div className="h-screen bg-black flex items-center justify-center text-white">
-      {!showWebsite && (
-        <h1 className="text-4xl text-gray-500">
-          {currentText}
-        </h1>
-      )}
-      {showWebsite && (
-        <div className="transition-opacity opacity-100">
-          Portfolio Website Content
-        </div>
-      )}
+    <div className="h-screen bg-gray-900 flex items-center justify-center text-white px-4">
+  {!showWebsite && (
+    <h1 className="text-2xl md:text-5xl lg:text-6xl text-gray-400 font-semibold transition-all duration-300 ease-in-out">
+      {currentText}
+    </h1>
+  )}
+  {showWebsite && (
+    <div className="transition-opacity opacity-100 text-lg md:text-xl lg:text-2xl font-medium">
+      Portfolio Website Content
     </div>
+  )}
+</div>
+
   );
 };
 

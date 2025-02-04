@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isScrolled, setIsScrolled] = useState(false); 
 
- 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10); // Set the threshold for scroll
@@ -52,51 +52,64 @@ const Nav = () => {
           </div>
           {/* Links for larger screens */}
           <div className="hidden md:flex space-x-6 text-xs">
-
-          <Link 
-  to="hero" 
-  smooth={true} 
-  duration={500} 
-  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
->
-  About
-</Link>
-<Link 
-  to="skills" 
-  smooth={true} 
-  duration={500} 
-  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
->
-  Skills
-</Link>
-<Link 
-  to="experience" 
-  smooth={true} 
-  duration={500} 
-  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
->
-  Experience
-</Link>
-<Link 
-  to="projects" 
-  smooth={true} 
-  duration={500} 
-  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
->
-  Projects
-</Link>
-<Link 
-  to="contact" 
-  smooth={true} 
-  duration={500} 
-  className="cursor-pointer hover:text-[#1e22ff] hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
->
-  Contact
-</Link>
-
-
-
-
+            <Link 
+              to="hero" 
+              smooth={true} 
+              duration={500} 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              About
+            </Link>
+            <Link 
+              to="skills" 
+              smooth={true} 
+              duration={500} 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Skills
+            </Link>
+            <Link 
+              to="experience" 
+              smooth={true} 
+              duration={500} 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Experience
+            </Link>
+            <Link 
+              to="projects" 
+              smooth={true} 
+              duration={500} 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Projects
+            </Link>
+            <Link 
+              to="contact" 
+              smooth={true} 
+              duration={500} 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Contact
+            </Link>
+            {/* Add the Resume link here */}
+            <a 
+              href="/Tousif Sadeque Chowdhury.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Resume
+            </a>
+            {/* GitHub icon */}
+            <a
+              href="https://github.com/TousifSadequeChowdhury" // Replace with your GitHub URL
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer hover:text-blue-600 transition-all duration-300 ease-in-out"
+            >
+              <FaGithub size={24} />
+            </a>
           </div>
         </div>
         {/* Mobile Menu */}
@@ -106,17 +119,16 @@ const Nav = () => {
               to="hero"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#1e22ff]"
+              className="cursor-pointer hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
-           
             <Link
               to="skills"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#1e22ff]"
+              className="cursor-pointer hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
@@ -125,7 +137,7 @@ const Nav = () => {
               to="experience"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#1e22ff]"
+              className="cursor-pointer hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
@@ -134,7 +146,7 @@ const Nav = () => {
               to="projects"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#1e22ff]"
+              className="cursor-pointer hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
@@ -143,11 +155,29 @@ const Nav = () => {
               to="contact"
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-[#1e22ff]"
+              className="cursor-pointer hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
+            {/* Add the Resume link here */}
+            <a 
+              href="/Tousif Sadeque Chowdhury.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="cursor-pointer hover:text-blue-600 hover:underline hover:underline-offset-4 transition-all duration-300 ease-in-out"
+            >
+              Resume
+            </a>
+            {/* GitHub icon for mobile */}
+            <a
+              href="https://github.com/TousifSadequeChowdhury" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer hover:text-blue-600"
+            >
+              <FaGithub size={24} />
+            </a>
           </div>
         )}
       </div>

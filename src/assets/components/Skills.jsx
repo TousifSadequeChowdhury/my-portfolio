@@ -3,7 +3,7 @@ import {
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaNodeJs, FaGitAlt, FaGithub, FaMicrosoft, FaRocket, FaRegClipboard, FaJava, FaCode 
 } from "react-icons/fa";
 import { 
-  SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiNpm, SiWebpack, SiTensorflow, SiPytorch, SiPython, SiJupyter, SiDocker 
+  SiTailwindcss, SiExpress, SiMongodb, SiFirebase, SiNpm, SiWebpack, SiTensorflow, SiPytorch, SiPython, SiJupyter, SiDocker, SiNextdotjs 
 } from "react-icons/si";
 
 const Skills = () => {
@@ -12,6 +12,7 @@ const Skills = () => {
       category: "Front-End",
       technologies: [
         { name: "React", icon: <FaReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
         { name: "HTML", icon: <FaHtml5 /> },
         { name: "CSS", icon: <FaCss3Alt /> },
         { name: "JavaScript", icon: <FaJs /> },
@@ -59,18 +60,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="w-full py-16 bg-gray-900 text-white">
+    <section id="skills" className="w-full py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="max-w-screen-xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-100">Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-100 font-sans">Skills</h2>
         <div className="space-y-16">
           {skills.map((skill, index) => (
             <div key={index} className="space-y-8">
-              <h3 className="text-3xl font-semibold text-center text-gray-300">{skill.category}</h3>
+              <h3 className="text-3xl font-semibold text-center text-gray-300 font-sans">{skill.category}</h3>
               <div className="flex flex-wrap justify-center gap-6">
                 {skill.technologies.map((tech, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center justify-center w-28 p-4 bg-gray-800 rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
+                    className="flex flex-col items-center justify-center w-28 p-4 bg-gray-800 rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-xl hover:bg-gray-700"
                   >
                     <div className="bg-gray-900 text-white p-3 rounded-full mb-2 text-2xl">
                       {tech.icon}
