@@ -22,7 +22,7 @@ const projects = [
   {
     name: "Alochona",
     description: "Alochona is a web-based forum where users can create, like, dislike, and interact with posts. It features AI-powered post generation, Google authentication, and a commenting system.",
-    techStack: ["JavaScript", "React", "Node", "AI", "MongoDB", "Express", "Firebase"],
+    techStack: ["JavaScript", "React", "TailwindCSS", "Node", "AI", "MongoDB", "Express", "Firebase"],
     liveDemo: "https://alochonaa.netlify.app/",
     frontendGithub: "https://github.com/TousifSadequeChowdhury/alochona-client-side",
     backendGithub: "https://github.com/TousifSadequeChowdhury/alochona-server-side",
@@ -31,7 +31,7 @@ const projects = [
   {
     name: "FixedItUp",
     description: "A service-oriented platform connecting users with home services. Users can search, request, and manage services. Service providers and admins can manage services efficiently.",
-    techStack: ["JavaScript", "React", "Node", "MongoDB", "Express", "Firebase"],
+    techStack: ["JavaScript", "React","TailwindCSS", "Node", "MongoDB", "Express", "Firebase"],
     liveDemo: "https://fixeditup.netlify.app/",
     frontendGithub: "https://github.com/TousifSadequeChowdhury/fixeditupClientSide",
     backendGithub: "https://github.com/TousifSadequeChowdhury/fixeditupServerSide",
@@ -40,7 +40,7 @@ const projects = [
   {
     name: "Zapgadget",
     description: "A user-friendly web platform for exploring and purchasing with a React-based UI, featuring advanced filtering and sorting to enhance the shopping experience.",
-    techStack: ["JavaScript", "React", "Node", "MongoDB", "Express"],
+    techStack: ["JavaScript", "React","TailwindCSS", "Node", "MongoDB", "Express"],
     liveDemo: "https://zapgadget.netlify.app/",
     frontendGithub: "https://github.com/TousifSadequeChowdhury/zapgadget-client-side",
     backendGithub: "https://github.com/TousifSadequeChowdhury/zapgadget-server-side",
@@ -82,7 +82,7 @@ const Projects = () => {
               </div>
 
               {/* Tech Stack */}
-              <div className="mt-4">
+              <div className="mt-4 min-h-[110px]">
                 <p className="font-semibold text-gray-700 mb-2">Tech Stack:</p>
                 <div className="flex flex-wrap gap-1">
                   {project.techStack.map((tech, idx) => (
